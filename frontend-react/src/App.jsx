@@ -48,7 +48,7 @@ function App() {
   const loadComplaints = async () => {
     try {
       const response = await fetch(
-        "http://localhost:8080/api/complaints"
+        https://smartcomplaintbackend.onrender.com/api/complaints
       );
       if (!response.ok) throw new Error("Could not load complaints");
       const data = await response.json();
