@@ -22,7 +22,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/complaints",
+        https://smartcomplaintbackend.onrender.com/api/complaints
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
