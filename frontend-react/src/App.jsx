@@ -76,9 +76,7 @@ function App() {
       setComplaints(data);
     } catch (error) {
       console.error("Error loading complaints:", error);
-      setMessage(
-        "Unable to load complaints. Please try again."
-      );
+      setMessage("Unable to load complaints. Please try again.");
     }
   };
 
@@ -157,12 +155,15 @@ function App() {
             complaints.map((complaint) => (
               <div className="complaint" key={complaint.id}>
                 <h3>Complaint #{complaint.id}</h3>
+
                 <p>
                   <strong>Name:</strong> {complaint.name}
                 </p>
+
                 <p>
                   <strong>Subject:</strong> {complaint.subject}
                 </p>
+
                 <p>
                   <strong>Status:</strong> {complaint.status}
                 </p>
