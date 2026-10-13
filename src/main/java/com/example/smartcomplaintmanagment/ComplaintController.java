@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/complaints")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class ComplaintController {
 
     private final ComplaintService complaintService;
@@ -34,13 +34,13 @@ public class ComplaintController {
         return ResponseEntity.notFound().build();
     }
 
-    // Create new complaint
+    // Create a new complaint
     @PostMapping
     public Complaint createComplaint(@RequestBody Complaint complaint) {
         return complaintService.createComplaint(complaint);
     }
 
-    // Update complaint
+    // Update a complaint
     @PutMapping("/{id}")
     public ResponseEntity<Complaint> updateComplaint(
             @PathVariable Long id,
@@ -55,7 +55,7 @@ public class ComplaintController {
         return ResponseEntity.notFound().build();
     }
 
-    // Delete complaint
+    // Delete a complaint
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteComplaint(@PathVariable Long id) {
         complaintService.deleteComplaint(id);
